@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="todo">
+<head>
+  <title>TODOアプリ</title>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" href="css/app.css">
+  <script src="script/libs/angular.min.js"></script>
+  <script src="script/app.js"></script>
+</head>
+<body ng-controller="TodoController">
+<div>
+  <form>
+    <label>やること
+      <input type="text" ng-model="text">
+    </label>
+    <button ng-click="insert()">追加・更新</button>
+  </form>
+</div>
+<div>
+  <div ng-show="todoList.length == 0">
+    ↑のフォームでTODOを入力してください
+  </div>
+  <div ng-repeat="todo in todoList">
+    <span ng-class="{delete: todo.done}">{{todo.text}}</span>
+    <button ng-click="update(todo)">{{todo.done ? '戻す' : '完了'}}</button>
+  </div>
+  <button ng-click="deleteDoneItems()">完了済みを削除</button>
+</div>
+</body>
+</html>
