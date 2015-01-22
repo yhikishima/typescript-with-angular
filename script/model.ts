@@ -1,5 +1,5 @@
 // model.ts
-module TodoApp.model {
+module TodoApp.Model {
   // Todo1件を表すデータ
   export interface ITodo {
     // TodoのID

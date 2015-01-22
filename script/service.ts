@@ -38,8 +38,8 @@ module TodoApp {
     }
 
     // 新規ToDoを１件追加し、追加したデータのコピーを返す
-    inset(todo: ITodo): IPromise<ITodo> {
-      var msxId = 0;
+    insert(todo: ITodo): IPromise<ITodo> {
+      var maxId = 0;
       this.todoList.forEach(todo=> {
         maxId = Math.max(maxId, todo.id);
       });
@@ -63,7 +63,7 @@ module TodoApp {
 
     update(updateId: number): IPromise<ITodo[]> {
       // 指定されたTODOのIDを探し完了フラグを反転する
-      this.todoList.foreach(todo => {
+      this.todoList.forEach(todo => {
         if (updateId === todo.id) {
           todo.done = !todo.done;
         }

@@ -24,7 +24,7 @@ module TodoApp {
   export class Controller {
     constructor(public $scope: Scope, public todoService: TodoApp.Service) {
       this.$scope.insert = this.insert.bind(this);
-      this.$scope.update = this.uodate.bind(this);
+      this.$scope.update = this.update.bind(this);
       this.$scope.deleteDoneItems = this.deleteDoneItems.bind(this);
 
       this.todoService.getList().success(todoList=> {

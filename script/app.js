@@ -30,9 +30,9 @@ var TodoApp;
             };
         };
         // 新規ToDoを１件追加し、追加したデータのコピーを返す
-        Service.prototype.inset = function (todo) {
+        Service.prototype.insert = function (todo) {
             var _this = this;
-            var msxId = 0;
+            var maxId = 0;
             this.todoList.forEach(function (todo) {
                 maxId = Math.max(maxId, todo.id);
             });
@@ -53,7 +53,7 @@ var TodoApp;
         };
         Service.prototype.update = function (updateId) {
             // 指定されたTODOのIDを探し完了フラグを反転する
-            this.todoList.foreach(function (todo) {
+            this.todoList.forEach(function (todo) {
                 if (updateId === todo.id) {
                     todo.done = !todo.done;
                 }
@@ -83,7 +83,7 @@ var TodoApp;
             this.$scope = $scope;
             this.todoService = todoService;
             this.$scope.insert = this.insert.bind(this);
-            this.$scope.update = this.uodate.bind(this);
+            this.$scope.update = this.update.bind(this);
             this.$scope.deleteDoneItems = this.deleteDoneItems.bind(this);
             this.todoService.getList().success(function (todoList) {
                 _this.$scope.todoList = todoList;
