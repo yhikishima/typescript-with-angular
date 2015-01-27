@@ -4,4 +4,20 @@
 
 main {
   padding: 40px 20px;
+  display: table;
+  width: 70%;
+}
+
+.ly-todo,
+.ly-todoAction {
+  display: table-cell;
+  text-align: left;
+}
+
+.ly-todoAction h2 {
+  margin-bottom: 20px;
+}
+
+.todoList {
+  margin-bottom: 10px;
 }
